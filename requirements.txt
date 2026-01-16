@@ -1,0 +1,22 @@
+# Azure SDK
+azure-search-documents>=11.4.0
+azure-identity>=1.15.0
+azure-storage-blob>=12.19.0
+
+# Azure OpenAI
+openai>=1.12.0
+
+# 데이터 처리 (바이너리 휠 사용)
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.4.0
+
+# 유틸리티
+python-dotenv>=1.0.0
+requests>=2.31.0
+pillow>=10.0.0
+
+# Jupyter (선택사항 - 필요시 설치)
+# jupyter>=1.0.0
+# notebook>=7.0.0
+# ipywidgets>=8.1.0
