@@ -227,8 +227,8 @@ SEARCH_ADMIN_KEY=your-admin-key-here
 SEARCH_INDEX_NAME=products-index
 
 # Azure OpenAI 설정 (2-2 단계에서 복사한 값)
-FOUNDRY_PROJECT_ENDPOINT=https://your-openai-name.openai.azure.com
-FOUNDRY_PROJECT_KEY=your-openai-key-here
+AZURE_OPEN_AI_ENDPOINT=https://your-openai-name.openai.azure.com
+AZURE_OPEN_AI_KEY=your-openai-key-here
 
 # 모델 배포 이름 (2-3 단계에서 설정한 이름)
 AZURE_OPENAI_EMBEDDING_DEPLOYMENT=text-embedding-3-small
@@ -517,8 +517,8 @@ cp .env.sample .env
 SEARCH_ENDPOINT=https://<your-service>.search.windows.net
 SEARCH_ADMIN_KEY=<admin-key>
 SEARCH_INDEX_NAME=products-index
-FOUNDRY_PROJECT_ENDPOINT=https://<your-endpoint>.openai.azure.com
-FOUNDRY_PROJECT_KEY=<api-key>
+AZURE_OPEN_AI_ENDPOINT=https://<your-endpoint>.openai.azure.com
+AZURE_OPEN_AI_KEY=<api-key>
 AZURE_OPENAI_EMBEDDING_DEPLOYMENT=text-embedding-3-small
 AZURE_OPENAI_CHAT_DEPLOYMENT=gpt-4o-mini
 AZURE_OPENAI_API_VERSION=2024-06-01
