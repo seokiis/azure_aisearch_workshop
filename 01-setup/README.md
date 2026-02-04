@@ -183,8 +183,8 @@ SEARCH_INDEX_NAME=products-index
 
 # Azure OpenAI (Foundry 프로젝트)
 # 프로젝트 엔드포인트 하나로 모든 deployment 접근 가능
-FOUNDRY_PROJECT_ENDPOINT=https://<your-search-service-name>.openai.azure.com/
-FOUNDRY_PROJECT_KEY=<your_key_here>
+AZURE_OPEN_AI_ENDPOINT=https://<your-search-service-name>.openai.azure.com/
+AZURE_OPEN_AI_KEY=<your_key_here>
 AZURE_OPENAI_EMBEDDING_DEPLOYMENT=text-embedding-3-small
 AZURE_OPENAI_CHAT_DEPLOYMENT=gpt-4.1-mini
 AZURE_OPENAI_API_VERSION=2024-02-01

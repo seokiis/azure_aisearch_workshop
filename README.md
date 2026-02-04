@@ -120,8 +120,8 @@ VS Code에서 다음 확장을 설치하세요:
    - "배포" 클릭
 3. **채팅 모델 배포:**
    - "새 배포 만들기" 클릭
-   - 모델: `gpt-4o-mini`
-   - 배포 이름: `gpt-4o-mini` (그대로 사용 권장)
+   - 모델: `gpt-4.1-mini`
+   - 배포 이름: `gpt-4.1-mini` (그대로 사용 권장)
    - "배포" 클릭
 
 ### 3단계: 프로젝트 설정
@@ -240,7 +240,7 @@ AZURE_OPENAI_API_VERSION=2024-06-01
 
 **중요:**
 - `SEARCH_ENDPOINT`는 `https://`로 시작하고 `.search.windows.net`으로 끝남
-- `FOUNDRY_PROJECT_ENDPOINT`는 `https://`로 시작하고 `.openai.azure.com`으로 끝남
+- `AZURE_OPEN_AI_ENDPOINT`는 `https://`로 시작하고 `.openai.azure.com`으로 끝남
 - 키 값에는 따옴표 없이 그대로 붙여넣기
 - 모든 값 입력 후 저장 (`Ctrl+S` 또는 `Cmd+S`)
 
