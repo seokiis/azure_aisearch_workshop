@@ -100,7 +100,7 @@ vector_query = VectorizedQuery(
 
 하이브리드 검색을 마스터한 후:
 
-1. **[05-scoring](../05-scoring/)** - Score Profile로 비즈니스 로직 추가
+1. **[05-score_tuning](../05-score_tuning/)** - 벡터/하이브리드/키워드 가중치 & 스코어 튜닝
 2. **[06-re_ranking](../06-re_ranking/)** - AI 재순위화로 정확도 향상
 
 ---

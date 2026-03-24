@@ -115,8 +115,8 @@ VS Code에서 다음 확장을 설치하세요:
 1. Azure OpenAI 리소스에서 "모델 배포" 클릭 (또는 [Azure AI Studio](https://ai.azure.com) 접속)
 2. **임베딩 모델 배포:**
    - "새 배포 만들기" 클릭
-   - 모델: `text-embedding-3-small`
-   - 배포 이름: `text-embedding-3-small` (그대로 사용 권장)
+   - 모델: `text-embedding-3-large`
+   - 배포 이름: `text-embedding-3-large` (그대로 사용 권장)
    - "배포" 클릭
 3. **채팅 모델 배포:**
    - "새 배포 만들기" 클릭
@@ -231,7 +231,7 @@ AZURE_OPEN_AI_ENDPOINT=https://your-openai-name.openai.azure.com
 AZURE_OPEN_AI_KEY=your-openai-key-here
 
 # 모델 배포 이름 (2-3 단계에서 설정한 이름)
-AZURE_OPENAI_EMBEDDING_DEPLOYMENT=text-embedding-3-small
+AZURE_OPENAI_EMBEDDING_DEPLOYMENT=text-embedding-3-large
 AZURE_OPENAI_CHAT_DEPLOYMENT=gpt-4o-mini
 
 # API 버전 (변경하지 마세요)
@@ -449,9 +449,9 @@ pip install --upgrade certifi
 | 모듈 | 핵심 기술 | 구현 내용 |
 |------|----------|----------|
 | 02-keyword_search | BM25, OData 필터, Facet | 인덱스 스키마 정의, `ko.lucene` 한국어 분석기, 필터/정렬/집계 |
-| 03-vector_search | HNSW, KNN, 임베딩 | 벡터 필드 추가, `text-embedding-3-small`로 1536차원 벡터 생성 |
+| 03-vector_search | HNSW, KNN, 임베딩 | 벡터 필드 추가, `text-embedding-3-large`로 3072차원 벡터 생성 |
 | 04-hybrid_search | RRF (Reciprocal Rank Fusion) | 키워드+벡터 결합, 점수 계산 원리 이해 |
-| 05-scoring_profile | TextWeights, Magnitude, Tag 함수 | 필드 가중치, 가격 기반 부스팅, 브랜드 우선순위 |
+| 05-score_tuning | VectorizedQuery weight, Scoring Profile | 벡터/하이브리드/키워드 가중치, 비즈니스 로직 부스팅 |
 | 06-re_ranking | Semantic L2 모델, Captions/Answers | 하이브리드 결과 재정렬, 답변 추출 |
 | 07-enriched_dataset | GPT Vision | 이미지 분석 → 텍스트 증강 → 벡터 재생성 |
 | 08-skillsets (개념) | Indexer, Skillset, Knowledge Store | OCR/Entity Recognition 등 Built-in Skills, Custom Skills, 실무 시나리오 5가지 |
@@ -476,7 +476,7 @@ pandas, numpy, scikit-learn, tqdm
 - ✅ VS Code + Python/Jupyter 확장 설치
 - ✅ Azure AI Search 리소스 (Basic 이상)
 - ✅ Azure OpenAI 리소스 + 모델 배포
-  - `text-embedding-3-small`
+  - `text-embedding-3-large`
   - `gpt-4o-mini`
 
 ### 빠른 설정
@@ -519,7 +519,7 @@ SEARCH_ADMIN_KEY=<admin-key>
 SEARCH_INDEX_NAME=products-index
 AZURE_OPEN_AI_ENDPOINT=https://<your-endpoint>.openai.azure.com
 AZURE_OPEN_AI_KEY=<api-key>
-AZURE_OPENAI_EMBEDDING_DEPLOYMENT=text-embedding-3-small
+AZURE_OPENAI_EMBEDDING_DEPLOYMENT=text-embedding-3-large
 AZURE_OPENAI_CHAT_DEPLOYMENT=gpt-4o-mini
 AZURE_OPENAI_API_VERSION=2024-06-01
 ```
@@ -590,7 +590,7 @@ results = search_client.search(
 ### Phase 4: 검색 품질 튜닝
 
 ```
-05-scoring_profile/01-scoring_profile → 비즈니스 로직 반영
+05-score_tuning/01-scoring_profile    → 벡터/하이브리드/키워드 가중치 튜닝
 06-re_ranking/01-semantic_reranking   → L2 모델로 재정렬
 ```
 
@@ -712,12 +712,9 @@ azure_aisearch_workshop/
 │   ├── README.md
 │   └── 01-hybrid_search.ipynb        # RRF (키워드+벡터)
 │
-├── 05-scoring/
-│   └── 01-scoring_profile.ipynb      # 점수 부스팅 (중복 폴더)
-│
-├── 05-scoring_profile/
+├── 05-score_tuning/
 │   ├── README.md
-│   └── 01-scoring_profile.ipynb      # 비즈니스 로직 적용
+│   └── 01-scoring_profile.ipynb      # 벡터/하이브리드/키워드 가중치 & 스코어 튜닝
 │
 ├── 06-re_ranking/
 │   ├── README.md

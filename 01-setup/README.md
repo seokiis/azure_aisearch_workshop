@@ -7,7 +7,7 @@
 | 학습 항목 | 설명 |
 |----------|------|
 | **☁️ Azure AI Search 서비스 프로비저닝** | Azure Portal에서 검색 서비스를 생성하고 SKU(Free/Basic/Standard)별 차이점을 이해합니다 |
-| **🤖 Azure AI Foundry 프로젝트 구성** | AI Foundry에서 프로젝트를 만들고 LLM 모델(GPT-4.1-mini, text-embedding-3-small)을 배포합니다 |
+| **🤖 Azure AI Foundry 프로젝트 구성** | AI Foundry에서 프로젝트를 만들고 LLM 모델(GPT-4.1-mini, text-embedding-3-large)을 배포합니다 |
 | **🔑 서비스 연결 및 인증** | API Key, Endpoint를 활용한 Azure 서비스 연결 방법을 익힙니다 |
 | **🐍 Python 개발 환경 구축** | 가상환경 생성, 필수 패키지 설치(`azure-search-documents`, `openai` SDK)를 수행합니다 |
 | **✅ 연결 테스트** | `.env` 파일 구성과 각 서비스 연결 검증을 통해 실습 환경을 완성합니다 |
@@ -83,7 +83,7 @@ Azure AI Search를 사용하기 위한 초기 환경을 설정합니다.
 2. 작업 전 방금 만든 프로젝트로 이동
 3. **"Build"** 메뉴 이동 후 **"Models"** 탭 이동
 4. 우측 상단의 **"Deploy a base model"** 을 통해 두 개의 모델 배포
-   - **모델**: `GPT-4.1-mini`, 그리고 `text-embedding-3-small`
+   - **모델**: `GPT-4.1-mini`, 그리고 `text-embedding-3-large`
    - **설정**: 모든 설정은 Default
 ![alt text](image-1.png)
 
@@ -185,7 +185,7 @@ SEARCH_INDEX_NAME=products-index
 # 프로젝트 엔드포인트 하나로 모든 deployment 접근 가능
 AZURE_OPEN_AI_ENDPOINT=https://<your-search-service-name>.openai.azure.com/
 AZURE_OPEN_AI_KEY=<your_key_here>
-AZURE_OPENAI_EMBEDDING_DEPLOYMENT=text-embedding-3-small
+AZURE_OPENAI_EMBEDDING_DEPLOYMENT=text-embedding-3-large
 AZURE_OPENAI_CHAT_DEPLOYMENT=gpt-4.1-mini
 AZURE_OPENAI_API_VERSION=2024-02-01
 ```
@@ -200,7 +200,7 @@ AZURE_OPENAI_API_VERSION=2024-02-01
 
 이 노트북에서는 다음 항목을 검증합니다:
 - Azure AI Search 연결 상태
-- Azure OpenAI Embedding 모델 (text-embedding-3-small)
+- Azure OpenAI Embedding 모델 (text-embedding-3-large)
 - Azure OpenAI Chat 모델 (gpt-4.1-mini)
 
 ---
