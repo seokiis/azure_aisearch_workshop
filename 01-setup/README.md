@@ -131,7 +131,7 @@ pip install -r requirements.txt
 **requirements.txt 내용:**
 ```txt
 # Azure SDK
-azure-search-documents>=11.4.0
+azure-search-documents>=11.6.0,<13
 azure-identity>=1.15.0
 azure-storage-blob>=12.19.0
 

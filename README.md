@@ -461,7 +461,7 @@ pip install --upgrade certifi
 
 ```
 Python 3.10+
-azure-search-documents >= 11.4.0
+azure-search-documents >= 11.6.0  (권장: 12.0.0 GA)
 openai >= 1.12.0
 python-dotenv
 pandas, numpy, scikit-learn, tqdm
