@@ -24,6 +24,8 @@
 
 Azure AI Search를 사용하기 위한 초기 환경을 설정합니다.
 
+> 💡 **참고**: 아래 포털 가이드가 **메인 학습 경로**입니다. 강사 시연이나 환경을 빠르게 재구성해야 할 때는 보조용 IaC([infra/README.md](./infra/README.md))를 사용할 수 있습니다.
+
 ## 1.Azure 리소스 그룹 생성
 1. **Azure Portal** (https://portal.azure.com) 접속
 2. **"리소스 만들기"** 클릭
